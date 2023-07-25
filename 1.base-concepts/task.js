@@ -8,13 +8,10 @@ function solveEquation(a, b, c) {
   let x1;
   let x2;
   
-  if (d < 0) {
-    arr = [];
-    console.log ('Дискриминант меньше нуля');
-  } else if (d === 0) {
+  if (d === 0) {
     x1 = -b / (2 * a);
     arr.push(x1);
-  } else (d > 0) {
+  } else if (d > 0) {
     x1 = (-b + Math.sqrt(d)) / (2 * a);
 		x2 = (-b - Math.sqrt(d)) / (2 * a);
 
@@ -27,7 +24,7 @@ function solveEquation(a, b, c) {
 // Задача 2
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (isNaN(percent), isNaN(contribution), isNaN(amount)) {
+  if (isNaN(percent) ||  isNaN(contribution) ||  isNaN(amount)) {
   return false;
 } else {
   let p = (percent / 100) / 12;
@@ -36,6 +33,6 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let payment = s * (p + (p / (((1 + p)**n) - 1 )));
   let totalAmount = ((payment * n).toFixed(2));
 
-  return totalAmount;
+  return Number(totalAmount);
   }
 }
